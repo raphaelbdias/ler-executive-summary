@@ -22,6 +22,9 @@ const keyHighlights = [
 ];
 
 export default function Home() {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+  const heroSrc = `${basePath}/images/banner.jpg`;
+
   return (
     <main className="brochure">
       {/* ===================== PAGE 1 ===================== */}
@@ -29,7 +32,7 @@ export default function Home() {
         <div className="content-container">
           {/* HERO */}
           <div className="hero-banner">
-            <Image src="/images/banner.jpg" alt="Banner" fill priority />
+            <Image src={heroSrc} alt="Banner" fill priority />
             <div className="hero-overlay">
               <p className="kicker">Investment Summary</p>
               <h1 className="hero-title">
