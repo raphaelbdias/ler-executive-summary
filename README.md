@@ -15,6 +15,11 @@ npm run dev
 # open http://localhost:3000
 ```
 
+### Deploying to GitHub Pages
+- Use a static export build: `npm run build && npx next export` (outputs to `out/`).
+- Configure GitHub Pages to serve from the `out` folder (e.g., via Actions that runs the export and uploads `out` as the artifact).
+- If your repo is published as `https://<user>.github.io/<repo>/`, set `next.config.js` `assetPrefix`/`basePath` accordingly for correct asset paths.
+
 ### Editing content
 - Update brochure text/tables in `data/ler-summary.json`:
   - `sections`: ordered narrative blocks (Exec Summary, Governance, etc.)
