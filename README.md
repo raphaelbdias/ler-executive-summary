@@ -18,7 +18,7 @@ npm run dev
 ### Deploying to GitHub Pages
 - Use a static export build: `npm run build` (Next uses `output: "export"` and writes to `out/`).
 - Configure GitHub Pages to serve from the `out` folder (e.g., via Actions that runs the export and uploads `out` as the artifact).
-- If your repo is published as `https://<user>.github.io/<repo>/`, set `next.config.js` `assetPrefix`/`basePath` accordingly for correct asset paths.
+- If your repo is published as `https://<user>.github.io/ler-executive-summary/`, the config already sets `basePath/assetPrefix` to `/ler-executive-summary` in CI (`GITHUB_ACTIONS`).
 
 ### Editing content
 - Update brochure text/tables in `data/ler-summary.json`:
