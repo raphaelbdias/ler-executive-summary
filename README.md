@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## LER Investment Summary Brochure (Next.js)
 
-## Getting Started
+This repo renders a 3-page A4 investment brochure for Limited Edition Realty using Next.js `app` router.
 
-First, run the development server:
+### Structure
+- `app/page.tsx`: page layout (hero, 2-column summary/highlights, ROI, governance, tables)
+- `app/globals.css`: brochure theming and print sizing
+- `data/ler-summary.json`: copy + tables (exec/governance sections, highlights, locations, ROI models, project profiles)
+- `public/images/banner.jpg`: hero image
 
+### Running locally
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# open http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Editing content
+- Update brochure text/tables in `data/ler-summary.json`:
+  - `sections`: ordered narrative blocks (Exec Summary, Governance, etc.)
+  - `keyHighlights`: right-column card
+  - `locationsTable`: source data for the transposed locations table (rendered on page 2)
+  - `roiModels`, `governance`, `projectProfiles`: page 2 content
+- Swap the hero image at `public/images/banner.jpg`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Print/PDF
+- Page size: A4 (210mm x 297mm), fixed padding and print-friendly styles.
+- Page 1: hero + 2-column summary/governance + highlights card.
+- Page 2: transposed locations table, ROI options, governance notes, project profiles.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Tech notes
+- Uses `next/font` (Nunito) for typography.
+- Tables use a transposed layout (locations become columns) for readability.
