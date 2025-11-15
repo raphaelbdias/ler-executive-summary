@@ -1,7 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: "export",          // required
-  distDir: "out",            // ensures GitHub Pages receives correct folder
+  output: "export",          // static export for GitHub Pages
   images: {
     unoptimized: true        // required for GitHub Pages (no Image Optimization server)
   },
